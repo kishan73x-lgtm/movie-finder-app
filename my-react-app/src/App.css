@@ -1,0 +1,134 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --radiues : 30px;
+  --search-bg : rgba(255,255,255,0.15);
+  --text-color : #ffffffff;
+  --border : 2px solid rgb(15, 241, 15);
+}
+body{
+  font-family: Arial,Arial, Helvetica, sans-serif;
+  height: 100vh;
+  color: var(--text-color);
+  background: var(--search-bg);
+
+}
+main{
+  background-color: rgb(40, 39, 39);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-container {  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start';
+}
+.form-container h2{
+  color: rgb(15, 241, 15);
+}
+
+form{
+  border:var(--border);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--radiues);
+  background: white;
+  color: white;
+}
+
+
+input{
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: white;
+  letter-spacing: 1px;
+  border-radius: var(--radiues);
+}
+input::placeholder{
+  color: black;
+}
+form button{
+  padding: 10px 15px;
+  border: none;
+  border-left: 2px solid black;
+  background: transparent;
+  cursor: pointer;
+}
+.movie-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 20px;
+}
+.movie-card{
+  border: var(--border);
+  padding: 10px;
+  border-radius: var(--radiues);
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  transition:0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.movie-card img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radiues);
+}
+.movie-card:hover{
+  transform:translateY(-5px);
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pagination button{
+  background: white;
+  border-radius: var(--radiues);
+  padding: 6px 10px;
+  border: var(--border);
+  color: black;
+}
+.title{
+  color:rgb(15, 241, 15);
+  
+  font-weight: 600;
+}
+.spinner-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+    flex-direction: column;
+ }
+ .spinner{
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ddd;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation:  spin 1s linear infinite;
+ }
+ @keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+ }
